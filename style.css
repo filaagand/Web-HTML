@@ -1,0 +1,1303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 5%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed; /* Menambahkan position fixed */
+    top: 0; /* Mengatur posisi di atas */
+    left: 0; /* Mengatur posisi dari kiri */
+    right: 0; /* Mengatur posisi dari kanan */
+    z-index: 1000; /* Memastikan navbar selalu di atas konten lain */
+}
+
+/* Menambahkan padding-top pada body untuk mengompensasi navbar fixed */
+body {
+    padding-top: 80px; /* Sesuaikan dengan tinggi navbar */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: -10px; /* Menambahkan margin negatif untuk mengangkat logo */
+}
+
+.logo img {
+    width: 90px;  /* Sedikit lebih kecil dari 100px */
+    height: auto;
+    object-fit: contain;
+    vertical-align: middle; /* Membantu perataan vertikal */
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #910510; /* Mengubah warna semua menu menjadi merah */
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative; /* Untuk animasi garis bawah */
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #910510;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #910510;
+}
+
+.nav-links a.active {
+    color: #910510;
+    font-weight: 600; /* Menambahkan font weight yang lebih bold */
+}
+
+/* Responsif untuk perangkat mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+}
+
+/* Menambahkan styling untuk container hero */
+.hero-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 0;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.intro-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2EDE0;
+    padding: 2rem;
+}
+
+.hero-content {
+    display: flex;
+    gap: 4rem;
+    max-width: 1200px;
+    align-items: center;
+}
+
+.envelope-wrapper {
+    flex: 1;
+    max-width: 350px;
+}
+
+.envelope {
+    background-color: transparent;
+    padding: 1rem;
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.envelope-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.greeting {
+    font-family: 'Parisienne', cursive;
+    color: #910510;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.description {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    color: #910510;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateX(10px);
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .envelope-wrapper {
+        max-width: 250px;
+    }
+}
+
+.hero-image {
+    width: 100%; /* Mengubah max-width menjadi width */
+    height: 100vh; /* Mengatur tinggi sesuai viewport */
+    object-fit: cover; /* Mengubah contain menjadi cover agar gambar mengisi penuh */
+}
+
+/* Menambahkan styling untuk container kedua */
+.second-container {
+    width: 100%;
+    height: 100vh;
+    background-color: #F2EDE0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.featured-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F2EDE0;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.featured-title {
+    font-family: 'Parisienne', cursive;
+    color: #ffffff;
+    font-size: 3rem;
+    text-align: center;
+    background-color: #910510;
+    width: 105%;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    -webkit-text-stroke: 0.1px black;  
+}
+
+.featured-subtitle {
+    color: #910510;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+}
+
+.project-card {
+    background-color: #910510;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.project-label {
+    color: #ffffff;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.project-link {
+    color: #910510;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    transform: translateX(10px);
+}
+
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+    
+    .featured-title {
+        font-size: 2.5rem;
+    }
+}
+
+.updates-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #910510;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.updates-title {
+    font-family: 'Parisienne', cursive;
+    color: #ffffff;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.updates-subtitle {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.updates-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+}
+
+.folder-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+}
+
+.folder-image {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.content-image {
+    width: 90%;
+    height: auto;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
+}
+
+.folder-wrapper:hover .content-image {
+    transform: translate(-50%, -52%);
+}
+
+.read-more {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    transform: translateX(10px);
+}
+
+@media (max-width: 768px) {
+    .updates-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+    
+    .updates-title {
+        font-size: 2.5rem;
+    }
+}
+
+.design-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F2EDE0;
+    padding: 5rem 2rem;  /* Menambah padding atas dan bawah */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Menambah justify-content center */
+    text-align: center;
+}
+
+.design-title {
+    font-family: 'Parisienne', cursive;
+    color: #910510;
+    font-size: 3rem; /* Menambah margin bawah */
+}
+
+.design-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem; /* Menambah padding samping */
+}
+
+.design-description {
+    color: #910510;
+    font-size: 1.2rem;
+    line-height: 1.8; 
+}
+
+.design-link {
+    display: inline-block;
+    color: #910510;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease; 
+}
+
+.design-link:hover {
+    transform: translateX(10px);
+}
+
+@media (max-width: 768px) {
+    .design-container {
+        padding: 6rem 1rem; /* Menyesuaikan padding untuk mobile */
+    }
+    
+    .design-title {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+}
+
+.footer1 {
+    width: 100%;
+    background-color: #910510;
+    padding: 1rem 5%;
+    border: 1px solid #910510;
+}
+
+.footer {
+    width: 100%;
+    background-color: #F2EDE0;
+    padding: 1rem 5%;
+    border: 1px solid #910510;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left1 {
+    font-size: 0.9rem;
+    color: #F2EDE0;
+}
+.footer-left {
+    font-size: 0.9rem;
+    color: #910510;
+}
+
+.footer-left p {
+    margin: 0.2rem 0;
+}
+
+.footer-right {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-link1 {
+    color: #F2EDE0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: opacity 0.3s ease;
+}
+
+.footer-link {
+    color: #910510;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: opacity 0.3s ease;
+}
+
+.footer-link:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .footer-right {
+        gap: 1rem;
+    }
+}
+
+.about-me-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F2EDE0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-me-title {
+    font-family: 'Parisienne', cursive;
+    color: #ffffff;
+    font-size: 3rem;
+    text-align: center;
+    background-color: #910510;
+    width: 100%;
+    padding: 3rem 0;
+    margin-bottom: 4rem;
+    -webkit-text-stroke: 0.1px black; 
+
+}
+
+.about-me-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+    padding: 2rem;
+}
+
+.about-me-left {
+    flex: 1;
+    max-width: 400px;
+}
+
+.about-me-envelope {
+    width: 80%;
+    position: relative;
+}
+
+.about-me-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-me-right {
+    flex: 1.5;
+    padding-top: 2rem;
+}
+
+.about-me-text {
+    color: #910510;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .about-me-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .about-me-left {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .about-me-title {
+        font-size: 2.5rem;
+        padding: 0.8rem 0;
+    }
+
+    .about-me-right {
+        padding-top: 1rem;
+    }
+}
+
+.education-container {
+    width: 100%;
+    background-color: #F2EDE0;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.education-title {
+    font-family: 'Parisienne', cursive;
+    color: #910510;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.education-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2px;
+    background-color: #910510;
+}
+
+.education-content {
+    max-width: 800px;
+    width: 100%;
+}
+
+.education-image {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.university-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.education-details {
+    text-align: center;
+    color: #910510;
+}
+
+.course-title {
+    font-family: 'Parisienne', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.university-name {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.education-period {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .education-title {
+        font-size: 2.5rem;
+    }
+
+    .course-title {
+        font-size: 2rem;
+    }
+
+    .university-name {
+        font-size: 1.2rem;
+    }
+
+    .education-period {
+        font-size: 1rem;
+    }
+}
+
+.skills-container {
+    width: 100%;
+    padding: 15rem 2rem;
+    background-color: #F2EDE0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.skills-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.skills-title {
+    font-family: 'Parisienne', cursive;
+    color: #910510;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.skills-subtitle {
+    color: #910510;
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem 8rem;
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.skill-level {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot.filled {
+    background-color: #910510;
+}
+
+.dot.empty {
+    background-color: #D9D9D9;
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .skill-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+.interest-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.interest-bg {
+    width: 100%;
+    height: auto;
+}
+
+.interest-title {
+    font-family: 'Parisienne', cursive;
+    color: #ffffff;
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.interest-text {
+    color: #910510;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    text-align: center;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+    .interest-title {
+        font-size: 2.5rem;
+    }
+    
+    .interest-text {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+}
+
+.music-grid {
+    position: relative;
+    z-index: 1;
+}
+
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    max-width: 1000px;
+    width: 100%;
+    padding: 0 1rem;
+    margin-bottom: 2rem; /* Menambah margin bottom */
+}
+
+.music-card {
+    border-radius: 15px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Menambahkan border pembatas */
+.portfolio-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-header-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.portfolio-description {
+    background-color: #F2EDE0;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.portfolio-description p {
+    color: #910510;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .portfolio-description {
+        padding: 2rem 1rem;
+    }
+    
+    .portfolio-description p {
+        font-size: 1rem;
+    }
+}
+
+.music-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .music-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .interest-title {
+        font-size: 2.5rem;
+    }
+
+    .interest-text {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 2000px;
+    margin: 0 auto;
+    background-color: #F2EDE0;
+    justify-items: center;
+}
+
+.portfolio-item {
+    background-color: #910510;
+    border-radius: 15px;
+    overflow: hidden;
+    max-width: 400px;
+}
+
+.portfolio-image {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 15px;
+    margin: 0.8rem;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.portfolio-info {
+    padding: 0.8rem 1rem;
+    color: white;
+}
+
+.portfolio-info h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.view-detail {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.view-detail:hover .arrow {
+    transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .portfolio-info h3 {
+        font-size: 1rem;
+    }
+}
+
+.blog-container {
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 2000px;
+    height: 550px;
+    margin: 0 auto;
+    background-color: #F2EDE0;
+    justify-items: center;
+    display: block;
+}
+
+.blog-image {
+    margin: 90px;
+    width: 50%;
+    height: 300px;
+    display: block;
+}
+
+  
+.quote-section {
+    display: block;
+    width: 100%;
+    height: 600px;            /* Biar lebar penuh, satu baris sendiri */
+    clear: both;            /* Pastikan tidak sejajar dengan elemen sebelumnya */      /* Jarak dari elemen sebelumnya */
+    padding: 150px 20px;
+    text-align: center;
+    background-color: #910510;;
+    font-family: 'Georgia', serif;
+    color: #F2EDE0;
+}
+.quote-section blockquote {
+    font-size: 2rem;
+    line-height: 1.4;
+    margin-top: 90px;
+}
+
+.quote-section blockquote strong {
+    font-weight: bold;
+}
+
+.quote-section .author {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 4rem;
+    font-family:'Parisienne', cursive;
+    color: white; /* Warna isi teks */
+    -webkit-text-stroke: 0.7px black; 
+}
+
+.music-blog-container {
+    width: 100%;
+    padding: 6rem 2rem;
+    background-color: #F2EDE0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.music-blog-wrapper {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    margin-bottom: 3rem;
+    max-width: 100%;
+}
+
+.music-blog-text {
+    text-align: center;
+    width: 100%;
+}
+
+.music-blog-title {
+    font-family: 'Parisienne', cursive;
+    color: #910510;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.music-blog-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #7A2626;
+    margin: 0;
+}
+
+.music-section {
+    background-color: #f3efe4;
+    padding: 2rem;
+  }
+  
+  .music-section-header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .music-text {
+    text-align: center;
+  }
+  
+  .music-title {
+    font-family: 'Parisienne', cursive;
+    font-size: 3rem;
+    color: #891a17;
+    margin: 0;
+  }
+  
+  .music-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #891a17;
+    margin-top: 0.5rem;
+  }
+  
+  /* Tombol kanan atas */
+  .view-more-btn {
+    position: absolute;
+    right: 0;
+    background-color: #891a17;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .music-blog-grid {
+    display: grid;
+    background: #f3efe4;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.music-blog-card {
+    background-color: transparent;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.music-blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.music-blog-info {
+    padding: 1rem 0;
+}
+
+.music-blog-info h3 {
+    color: #910510;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.read-more-link {
+    color: #910510;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.read-more-link::after {
+    content: "→";
+    transition: transform 0.3s ease;
+}
+
+.read-more-link:hover::after {
+    transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+    .music-blog-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .music-blog-info h3 {
+        font-size: 0.9rem;
+    }
+}
+.contact-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F2EDE0;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 4rem;
+    margin: 0 auto;
+}
+
+.contact-left {
+    flex: 1;
+}
+
+.contact-title {
+    font-family: 'Parisienne', cursive;
+    color: #910510;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.contact-description {
+    color: #910510;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #910510;
+}
+
+.contact-item img {
+    width: 24px;
+    height: 24px;
+}
+
+.contact-right {
+    flex: 1;
+}
+
+.contact-form {
+    background-color: #F2EDE0;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.contact-form h2 {
+    color: #910510;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.8rem;
+    border: 1px solid #910510;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.send-button {
+    background-color: #910510;
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: opacity 0.3s ease;
+}
+
+.send-button:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .contact-title {
+        font-size: 2.5rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+}
+
+.map-container {
+    width: 70%;
+    height: 310px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 8px solid #910510;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    display: block;
+}
